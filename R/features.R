@@ -51,17 +51,17 @@ feature_combinations <- function(m, exact = TRUE, n_combinations = 200, weight_z
 
   # Not supported for m > 30
   if (m > 30 & is.null(group_num)) {
-    stop(
+    message(
       paste0(
-        "Currently we are not supporting cases where the number of features is greater than 30\n",
+        "[FORK OVERRIDES STOP] Currently we are not supporting cases where the number of features is greater than 30\n",
         "for feature-wise Shapley values."
       )
     )
   }
   if (length(group_num) > 13) {
-    stop(
+    message(
       paste0(
-        "For computational reasons, we are currently not supporting group-wise Shapley values \n",
+        "[FORK OVERRIDES STOP] For computational reasons, we are currently not supporting group-wise Shapley values \n",
         "for more than 13 groups. Please reduce the number of groups."
       )
     )
